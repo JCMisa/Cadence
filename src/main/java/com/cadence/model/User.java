@@ -29,9 +29,9 @@ public class User
 
     private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 
-//    @JsonIgnore // ignore this property when retrieving the User instance's properties in a json format
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer") // to say that a user has a one-to-many relationship with the Order model. It means that one user can have a multiple order
-//    private List<Order> orders = new ArrayList<>();
+    @JsonIgnore // ignore this property when retrieving the User instance's properties in a json format
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer") // to say that a user has a one-to-many relationship with the Order model. It means that one user can have a multiple order
+    private List<Order> orders = new ArrayList<>();
 //
 //    @ElementCollection
 //    private List<RestaurantDto> favorites = new ArrayList<>();
