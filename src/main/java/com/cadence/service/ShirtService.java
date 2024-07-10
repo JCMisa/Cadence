@@ -11,7 +11,7 @@ public interface ShirtService
 {
     public Shirt createShirt(CreateShirtRequest req, ShirtCategory category, ClothingShop clothingShop);
     void deleteShirt(Long shirtId) throws Exception;
-    public List<Shirt> getClothingShopShirts(Long shirtId, String shirtCategory);
+    public List<Shirt> getClothingShopShirts(Long shopId, String shirtCategory);
     public List<Shirt> searchShirt(String keyword);
     public Shirt findShirtById(Long shirtId) throws Exception;
     public Shirt updateAvailabilityStatus(Long shirtId) throws Exception;
