@@ -23,7 +23,7 @@ public class Event
     private String location;
 
     @ManyToOne
-    private ShirtCategory shirtCategory;
+    private ClothingShop clothingShop;
 
     private String startsAt;
 

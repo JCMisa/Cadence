@@ -1,5 +1,6 @@
 package com.cadence.model;
 
+import com.cadence.dto.ShopDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -32,10 +33,10 @@ public class User
     @JsonIgnore // ignore this property when retrieving the User instance's properties in a json format
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer") // to say that a user has a one-to-many relationship with the Order model. It means that one user can have a multiple order
     private List<Order> orders = new ArrayList<>();
-//
-//    @ElementCollection
-//    private List<RestaurantDto> favorites = new ArrayList<>();
-//
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) // because one user can have multiple addresses. CascadeType All so that once a User deleted, all related addresses for the user will also be deleted
-//    private List<Address> addresses = new ArrayList<>();
+
+    @ElementCollection
+    private List<ShopDto> favorites = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) // because one user can have multiple addresses. CascadeType All so that once a User deleted, all related addresses for the user will also be deleted
+    private List<Address> addresses = new ArrayList<>();
 }

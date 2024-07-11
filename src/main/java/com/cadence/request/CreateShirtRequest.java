@@ -16,5 +16,5 @@ public class CreateShirtRequest
     private ShirtCategory category;
     private List<String> images;
 
-    private Long clothingStoreId;
+    private Long clothingShopId;
 }

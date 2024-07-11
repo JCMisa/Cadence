@@ -11,7 +11,7 @@ public interface ShirtRepository extends JpaRepository<Shirt, Long>
 {
     List<Shirt> findByClothingShopId(Long clothingShopId);
 
-    @Query("SELECT s FROM Shirt s WHERE s.name LIKE %:keyword% OR s.shirtCategory.name LIKE %:keyword% OR s.size LIKE" +
+    @Query("SELECT s FROM Shirt s WHERE s.name LIKE %:keyword% OR s.category.name LIKE %:keyword% OR s.size LIKE" +
             " %:keyword%")
     List<Shirt> searchShirt(@Param("keyword") String keyword);
 }
